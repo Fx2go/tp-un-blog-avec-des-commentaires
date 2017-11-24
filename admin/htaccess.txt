@@ -1,0 +1,5 @@
+﻿AuthUserFile /home/FTPuser/www/dossier/TP/.htpasswd
+AuthGroupFile /dev/null
+AuthName "Accès à l'administration du blog "
+AuthType Basic
+require valid-user

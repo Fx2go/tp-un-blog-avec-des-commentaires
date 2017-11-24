@@ -1,0 +1,1 @@
+<h1><a href="#"> <i class="fa fa-edit" aria-hidden="true"></i><span class="edition" >&Eacute;dition</span></a> / <a href="http://fxgodin.com/TP/PHP-MYSQL/blog_et_commentaires/"><i class="fa fa-coffee" aria-hidden="true"></i> Blog &amp; Coms</a></h1>
