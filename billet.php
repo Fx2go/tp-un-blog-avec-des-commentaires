@@ -1,7 +1,7 @@
 <?php
-if (isset ($_GET['billet']) )
+if (isset ($_GET['id']) )
 	{
-		$id_billet=strip_tags($_GET['billet']);
+		$id_billet=strip_tags($_GET['id']);
 	}
 else
 {//On retourne sur la page principale
