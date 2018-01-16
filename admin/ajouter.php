@@ -2,43 +2,31 @@
 $auteur=stripslashes(htmlspecialchars($_POST['auteur']));
 $titre_billet=stripslashes(htmlspecialchars($_POST['titre_billet']));
 $contenu_billet=stripslashes(htmlspecialchars($_POST['contenu_billet']));
-
-
-
-
 		//Si le formulaire complet a été envoyer 
-
 		if(!empty($_POST[auteur])&&!empty($_POST[titre_billet])&&!empty($_POST[contenu_billet])) {
-
 			//connection BDD
 	include ('../connection_BDD.php');
 			//requete pour ajouter Billet
 	 $req = $bdd->prepare('INSERT INTO billets(titre,contenu,date_creation,nom_auteur) VALUES(:titre,:contenu,NOW(),:nom_auteur)');
-
 	$req->execute(array('titre'=>$titre_billet,'contenu'=>$contenu_billet,'nom_auteur'=>$auteur));
-
 	//on redirige l'url vers le nouvel article
 	 	//on identifie l'ID du nouveau billet
 	 $req1=$bdd->prepare('SELECT id FROM billets WHERE titre=:titre AND contenu=:contenu AND date_creation=:date_creation AND   nom_auteur=:nom_auteur');
 	 $req1->execute(array('titre'=>$titre_billet,'contenu'=>$contenu_billet,'date_creation'=>$date_billet,'nom_auteur'=>$auteur));
-
 	 while ($data=$req->fetch())
 	 	{
 	 		$id_billet=$data['id'];
 		}
-
-	header('Location:../billet.php?billet='.$id_billet);
-
+	header('Location:../billet.php?id='.$id_billet);
 	//header('Location:../index.php');
-
 		}
 		elseif (isset($_POST['envoyer'])) {
 			echo'Formulaire incomplet!!<br>';
 		 } 
-
-		// Si non on fait rien ... on attends....Jonathan
+		// Si non on fait rien ... on attends....
 	
 ?>
+
 
 
 
