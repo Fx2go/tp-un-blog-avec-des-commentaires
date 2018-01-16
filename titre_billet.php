@@ -6,7 +6,7 @@
 		<?php echo 'Discours de <strong>'.htmlspecialchars($data['nom_auteur']).'</strong>, publié ici le '.htmlspecialchars($data['date_formatee']);?>
 	</span>
 <?php
-if (isset ($_GET['billet']) )
+if (isset ($_GET['id']) )
 	{
 		include('admin-menu.php');
 	}
