@@ -24,7 +24,7 @@
 	while ($data = $req->fetch())
 	{
 		 //on définit le lien vers le billet entier pour l'utiliser 2 fois après.
-		 $lien_article="billet.php?billet=".htmlspecialchars($data['id']);
+		 $lien_article="billet.php?id=".htmlspecialchars($data['id']);
 		 //on découpe proprement l'extrait après 30 mots
 		 $data['intro']=htmlspecialchars($data['intro']);
 		 $decoupe_au_mot=implode(' ',array_slice(explode(' ',$data['intro']), 0, 32));
