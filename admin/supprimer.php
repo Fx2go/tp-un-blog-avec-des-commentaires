@@ -18,9 +18,25 @@
 		include('header_admin.php');
 	?>
 
+<?php
+if (isset ($_GET['id']) )
+	{
+		$id_billet=strip_tags($_GET['id']);
+	}
+else
+{//On retourne sur la page principale
+	header('Location: ../../index.php');
+}
 
-	<h2 class="edition">Supprimer le billet</h2>
-	<p>Page en construction</p>
+include ('../connection_BDD.php');
+
+	$req = $bdd->prepare("DELETE FROM billets WHERE id= :id_billet");
+	 
+	$req->bindParam(':id_billet', $id_billet);
+	$req->execute();
+	// une fois le billet supprimé, on retourne sur la page d'accueil
+	header('Location: ../../index.php');
+	?>
 
 		</body>
 </html>
